@@ -27,8 +27,8 @@ CMD=$1
 BOTFOLDER="${PWD}"
 FILES="*-config.js"
 
-echo -e "\n  ${GREEN}${BOLD}GUNBOT LAUNCHER - v0.0.1${RESET} ${BLUE} $(date +%d.%m.%Y\ %H:%M)${RESET}"
-echo -e "${GREEN}""==============================================\n""${RESET}"
+echo -e "\n${GREEN}${BOLD}╔═ GUNBOT LAUNCHER v0.0.1${RESET}${BLUE} $(date +%d.%m.%Y\ %H:%M)${RESET} ${GREEN}════════════════════╗${RESET}"
+echo -e "${GREEN}""╠══════════════════════════════════════════════════════════════╣\n""${RESET}"
 
 ##  OPTIONS
 ##  -----------------------------------------------
@@ -75,7 +75,7 @@ if [[ -n "$CMD" ]]; then
         echo -n "${BLUE} [ skipping... ]${RESET}"
         echo -e " "
       else
-        echo -e "${RED}${BOLD}【 YES! 】${RESET}"
+        echo -e "${RED}${BOLD}【 YES! 】${RESET}\c"
         echo -n "${BLUE}[ exiting... ]${RESET}"
         echo -e " "
         screen -S "$NAME" -X quit && sleep 0.2
@@ -86,6 +86,8 @@ if [[ -n "$CMD" ]]; then
     echo -e "${GREEN}${BOLD}Done! All Pairs are stopped! ${RESET}\n"
     exit 0
   fi
+
+
 
   ##  LIST
   ##  -----------------------------------------------
@@ -100,9 +102,11 @@ if [[ -n "$CMD" ]]; then
     exit 0
   fi
 else
-  echo -e "${RED}""  COMMAND MISSING!""${RESET}"
-  echo " "
-  echo -e "  ${BLUE}Usage: ${WHITE}bash guncontrol.sh [${GREEN}${BOLD} start [pair] [exchange]${RESET}, ${RED}${BOLD}stop [pair]${RESET}, ${YELLOW}${BOLD}list${RESET} ]${RESET}\c"
+  echo -e "${RED}""  ╔═ COMMAND MISSING! ════════════════════════════════╗""${RESET}"
+  echo -e "${RED}""  ╠═══════════════════════════════════════════════════╣""${RESET}"
+  echo -e "  ${RED}║${RESET}  ${BLUE}Usage: ${WHITE}${BOLD}bash${RESET} guncontrol.sh [${GREEN} start${RESET}, ${RED}stop${RESET}, ${YELLOW}list${RESET} ]${RESET}  ${RED}║${RESET}"
+  echo -e "${RED}""  ╠═══════════════════════════════════════════════════╣""${RESET}"
+
   echo " "
   exit 0
 fi
